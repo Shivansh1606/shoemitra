@@ -1,32 +1,216 @@
-// Script for Online Shoes Store
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    const cartButtons = document.querySelectorAll('.product .btn');
+header {
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+/* Center the image */
+.styled-image {
+    display: block;
+    margin: 20px auto;
+    width: 1000 auto ; /* Adjust width as needed */
+    height: 400px auto; /* Maintain aspect ratio */
+    border: 5px solid #ccc; /* Add a border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth effects */
+}
 
-    cartButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const product = event.target.closest('.product');
-            const productName = product.querySelector('h3').textContent;
-            const productPrice = product.querySelector('p').textContent;
+/* Add hover effect */
+.styled-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
 
-            // alert(`Added to Cart:\nProduct: ${productName}\nPrice: ${productPrice}`);
-        });
-    });
 
-    const contactForm = document.getElementById('contact-form');
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
-    contactForm.addEventListener('submit', (event) => {
-        event.preventDefault();
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
 
-        if (name && email && message) {
-            alert(`Thank you, ${name}! Your message has been sent successfully.`);
-            contactForm.reset();
-        } else {
-            alert('Please fill in all fields before submitting.');
-        }
-    });
-});
+.nav-links li a:hover {
+    color: #f4a261;
+}
+
+.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 2rem;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #f4a261;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #e76f51;
+}
+.features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+   }
+   .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+   }
+   .featureIcon {
+    width: 50px;
+    height: 50px;
+   }
+   .featureTitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px;
+   }
+   .featureDesc {
+    color: gray;
+   width: 50%;
+    height: 100px;
+   }
+
+.products {
+    padding: 2rem;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.product {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.product p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.about {
+    background: #f9f9f9;
+    padding: 2rem;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact {
+    padding: 2rem;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
