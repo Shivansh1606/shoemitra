@@ -5,7 +5,7 @@ for (let i = 1; i <= 20; i++) {
     products.push({
         id: i,
         name: `Product ${i}`,
-        price: `Rs${(Math.random() * 1956 + 40).toFixed(2)}`,
+        price: `Rs---`,
         image: `https://via.placeholder.com/250?text=Product+${i}`
     });
 }
