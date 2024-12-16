@@ -1,3 +1,4 @@
+
 /* General Reset */
 body {
     margin: 0;
@@ -17,6 +18,24 @@ header {
     top: 0;
     z-index: 1000;
 }
+/* Center the image */
+.styled-image {
+    display: block;
+    margin: 20px auto;
+    width: 1000 auto ; /* Adjust width as needed */
+    height: 400px auto; /* Maintain aspect ratio */
+    border: 5px solid #ccc; /* Add a border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth effects */
+}
+
+/* Add hover effect */
+.styled-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
+
 
 .logo {
     font-size: 1.5rem;
