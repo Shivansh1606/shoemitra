@@ -29,4 +29,14 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please fill in all fields before submitting.');
         }
     });
+    document.getElementById('signInForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        if (username === 'email' && password === 'name') {
+            alert('Login Successful!');
+        } else {
+            alert('Invalid username or password');
+        }
+    });
 });
